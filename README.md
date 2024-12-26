@@ -1,37 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Reverse Text Application
 
-## Getting Started
+## 기본 요구 사항
 
-First, run the development server:
+### 1. 텍스트 입력 및 변환
+- 왼쪽 `textarea`에서 사용자의 입력을 받습니다.
+- 버튼 클릭 시 텍스트를 **뒤집어** 오른쪽 `textarea`에 출력합니다.
+  - 예: `cat` → `tac`
+- **Route Handler 사용**: 입력값을 서버에 전달하고, 변환된 값을 서버에서 받아오세요.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 2. 입력 검증
+- 입력값이 **공백**(`""`, `"   "`)이거나 **3글자 미만**일 경우:
+  - 에러 메시지를 빨간색으로 표시합니다.
+  - 변환 로직은 실행되지 않습니다.
+- 입력값이 유효할 경우 에러 메시지는 사라져야 합니다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. 입력 이력 관리
+- **Route Handler 사용**: 사용자가 입력한 텍스트와 변환된 텍스트를 서버에 저장하세요.
+- 저장된 입력 이력을 화면에 목록으로 표시합니다.
+- **Load History 버튼**을 클릭하면, 서버에서 입력 이력을 불러와 UI에 표시하세요.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Word Count 표시
+- 왼쪽 `textarea` 아래에 입력된 **단어 수**를 표시하세요.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 5. 입력 이력 삭제
+- 입력 이력에서 각 항목에 **삭제 버튼**을 추가하세요.
+- **Route Handler 사용**: 삭제 버튼 클릭 시, 서버에서 해당 항목을 제거하고 화면에서도 업데이트하세요.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## [Advanced] 추가 요구 사항
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 1. 좋아요 기능
+- 입력 이력에서 각 텍스트에 **좋아요 버튼**을 추가하세요.
+- 사용자는 각 텍스트에 대해 한 번만 좋아요를 누를 수 있습니다.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 2. 삭제 및 복구 기능
+- 입력 이력을 삭제할 수 있는 버튼을 추가하세요.
+- 삭제한 내용을 복구할 수 있는 **Undo 기능**을 구현하세요.
+  - **[Advanced]** Undo 이후 다시 삭제할 수 있는 **Redo 기능**을 구현하세요.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# interview-practice
+### 3. 단축키 추가
+- `Ctrl + Z` 또는 `Cmd + Z` 단축키로 Undo 동작을 실행하세요.
