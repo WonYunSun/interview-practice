@@ -44,10 +44,9 @@ export default function Home() {
       return;
     } else {
       setErrorMessage("");
-      console.log("들어온 값값", inputText);
 
       const reversed = inputText.split("").reverse().join("");
-      console.log("reversed는", reversed);
+
       postInputText(inputText, reversed);
       setReversedText(reversed);
     }
@@ -96,6 +95,7 @@ export default function Home() {
             }}
             placeholder="Enter text here"
           />
+
           {errorMessage && <p className="text-red-500">{errorMessage}</p>}
           <button
             className="mt-2 bg-blue-500 text-white px-4 py-2 rounded"
