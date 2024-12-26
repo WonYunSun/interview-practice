@@ -95,6 +95,7 @@ export default function Home() {
             }}
             placeholder="Enter text here"
           />
+          <div>{inputText.length}</div>
 
           {errorMessage && <p className="text-red-500">{errorMessage}</p>}
           <button
