@@ -46,6 +46,15 @@
 
 ---
 
+## Before
+<img width="739" alt="Screenshot 2024-12-26 at 12 25 34 PM" src="https://github.com/user-attachments/assets/8963c9d9-e51a-49a5-b276-a30ee43e1b44" />
+
+## After
+<img width="732" alt="Screenshot 2024-12-26 at 12 25 13 PM" src="https://github.com/user-attachments/assets/a2eabee8-bb6c-47f1-9c8e-5133697a4188" />
+
+
+---
+
 ## 제공된 파일
 
 1. **`app/page.tsx`**:
